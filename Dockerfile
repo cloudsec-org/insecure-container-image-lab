@@ -29,6 +29,9 @@ RUN printf "#!/bin/sh\n# harmless test file simulating malicious artifact\necho 
  && chmod +x /app/fake_malware_sim.sh
 
 # Get a malware
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends wget ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 RUN wget http://wildfire.paloaltonetworks.com/publicapi/test/elf -O /app/malware-sample
 
 # Simple web app exposed for SCA / scanner testing (does not perform any sensitive actions)

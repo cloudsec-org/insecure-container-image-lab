@@ -23,7 +23,7 @@ cd insecure-container-image-lab
 2. Build the image (no network egress should be required if your environment is isolated):
 
 ```shell
-docker build -t insecure-lab-image:1.0 .
+docker build -t insecure-container-image-lab:1.0.0 .
 ```
 
 
@@ -31,7 +31,7 @@ docker build -t insecure-lab-image:1.0 .
 3. Run the container in an isolated network/VM:
 
 ```shell
-docker run --rm -p 8080:8080 --name insecure-lab --network none insecure-lab-image:1.0
+docker run --rm -p 8080:8080 --name insecure-lab --network none insecure-container-image-lab:1.0.0
 ```
 
 
