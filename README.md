@@ -13,9 +13,9 @@ This repository contains a deliberately *insecure* Docker image used only for of
 1. Clone the repo locally in an isolated VM or sandbox.
 
 ```shell
-git clone https://github.com/<your-org>/insecure-lab-image.git
+https://github.com/cloudsec-org/insecure-container-image-lab.git
 
-cd insecure-lab-image
+cd insecure-container-image-lab
 ```
 
 
