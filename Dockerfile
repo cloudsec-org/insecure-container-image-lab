@@ -28,11 +28,12 @@ RUN printf "aws_access_key_id=${AWS_ACCESS_KEY_ID}\naws_secret_access_key=${AWS_
 RUN printf "#!/bin/sh\n# harmless test file simulating malicious artifact\necho 'this is a harmless test artifact' > /tmp/harmless_payload.txt\n" > /app/fake_malware_sim.sh \
  && chmod +x /app/fake_malware_sim.sh
 
-# Get a malware
+# Get some malwares
 RUN apt-get update && \
     apt-get install -y --no-install-recommends wget ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 RUN wget http://wildfire.paloaltonetworks.com/publicapi/test/elf -O /app/malware-sample
+COPY beacon-socpoc-mtls-443-cley-evasion /usr/local/bin/beacon
 
 # Simple web app exposed for SCA / scanner testing (does not perform any sensitive actions)
 COPY <<'PY' /app/app.py
