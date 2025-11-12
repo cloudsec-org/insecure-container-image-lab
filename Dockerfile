@@ -4,8 +4,9 @@
 FROM python:3.8-slim
 
 # Metadata
-LABEL maintainer="you@example.com"
+LABEL maintainer="chrisley75"
 LABEL purpose="Test image for CI/CD scanners — contains example 'secrets' placeholders and outdated deps"
+LABEL org.opencontainers.image.ref.name="cley-insecure-image"
 
 # FAKE SECRETS
 ENV AWS_ACCESS_KEY_ID="AKIAEXAMPLEFAKEKEY"
